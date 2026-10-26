@@ -1,0 +1,131 @@
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="1,7-mRCTR Evidence Portal">
+      <svg class="brand-mark" viewBox="0 0 30 30" aria-hidden="true"><rect x="0.5" y="0.5" width="29" height="29" rx="7" fill="var(--night)" stroke="var(--night-line)"/><path d="M6 21 L11 14 L15 17 L20 8 L24 11" fill="none" stroke="var(--n-int)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="11" r="2.4" fill="var(--on-night)"/></svg>
+      <div><b>1,7-mRCTR</b><span data-t="brand_sub"></span></div>
+    </a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#findings" data-t="nav_findings"></a><a href="#impact" data-t="nav_impact"></a><a href="#who" data-t="nav_who"></a><a href="#map" data-t="nav_map"></a><a href="#prevention" data-t="nav_prev"></a><a href="#care" data-t="nav_care"></a><a href="#facilities" data-t="nav_fac"></a><a href="#quality" data-t="nav_dq"></a><a href="#methods" data-t="nav_methods"></a>
+    </nav>
+    <div class="lang" role="group" aria-label="Language / 语言">
+      <button type="button" id="lang-en" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" id="lang-zh" data-lang="zh" aria-pressed="false">中文</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow" data-t="hero_eyebrow"></div>
+      <h1 data-t="hero_h1"></h1>
+      <p class="lead" data-th="hero_lead"></p>
+      <div class="kpis">
+        <div class="kpi"><div class="v" data-n="people"></div><div class="l" data-t="kpi_people"></div></div>
+        <div class="kpi"><div class="v" data-n="tested"></div><div class="l" data-t="kpi_tested"></div></div>
+        <div class="kpi"><div class="v" data-n="hh"></div><div class="l" data-t="kpi_hh"></div></div>
+        <div class="kpi"><div class="v" data-n="vill"></div><div class="l" data-t="kpi_vill"></div></div>
+      </div>
+    </div>
+    <div class="hero-chart">
+      <div class="hero-fig"><div class="big" data-n="cf_red_s"></div><div class="cap" data-t="hero_fig_cap"></div></div>
+      <div class="chart" id="c-hero" role="img"></div>
+      <div class="src" data-t="hero_src"></div>
+    </div>
+  </div>
+</section>
+
+<main>
+<section class="sec" id="findings"><div class="wrap">
+  <div class="sec-head"><div class="eyebrow" data-t="nav_findings"></div><div><h2 data-t="find_h2"></h2><p class="intro" data-t="find_intro"></p></div></div>
+  <div class="fgrid" id="fgrid"></div>
+</div></section>
+
+<section class="sec" id="impact"><div class="wrap">
+  <div class="sec-head"><div class="eyebrow" data-t="nav_impact"></div><div><h2 data-t="imp_h2"></h2><p class="intro" data-t="imp_intro"></p></div></div>
+  <div class="ctrls" style="margin-bottom:14px"><span class="ctrl-l" data-t="ctl_compare"></span><div class="seg" id="seg-sub" role="group"></div></div>
+  <div class="grid g-wide">
+    <div class="card" id="k-slope"></div>
+    <div class="card" id="k-robust"></div>
+  </div>
+</div></section>
+
+<section class="sec" id="who"><div class="wrap">
+  <div class="sec-head"><div class="eyebrow" data-t="nav_who"></div><div><h2 data-t="who_h2"></h2><p class="intro" data-t="who_intro"></p></div></div>
+  <div class="grid g2">
+    <div class="card" id="k-het"></div>
+    <div class="card" id="k-age"></div>
+  </div>
+</div></section>
+
+<section class="sec" id="map"><div class="wrap">
+  <div class="sec-head"><div class="eyebrow" data-t="nav_map"></div><div><h2 data-t="map_h2"></h2><p class="intro" data-t="map_intro"></p></div></div>
+  <div class="ctrls" style="margin-bottom:12px">
+    <div><span class="ctrl-l" data-t="ctl_view"></span><div class="seg" id="seg-view" role="group"></div></div>
+    <div id="ctl-metric"><span class="ctrl-l" data-t="ctl_measure"></span><div class="seg" id="seg-metric" role="group"></div></div>
+    <div id="ctl-round"><span class="ctrl-l" data-t="ctl_round"></span><div class="seg" id="seg-round" role="group"></div></div>
+    <label class="chk"><input type="checkbox" id="chk-fac"><span data-t="ctl_fac"></span></label>
+  </div>
+  <div class="mapwrap">
+    <div class="map-stage" id="map-stage">
+      <svg id="map-svg" aria-label="Village map"></svg>
+      <div class="map-legend" id="map-legend"></div>
+      <div class="map-tools"><button type="button" id="zin" aria-label="Zoom in">+</button><button type="button" id="zout" aria-label="Zoom out">−</button><button type="button" id="zreset" aria-label="Reset view">⟲</button></div>
+      <div class="inset"><div class="cap" data-t="inset_cap"></div><svg id="inset-svg" viewBox="0 0 108 108" width="108" height="108" aria-hidden="true"></svg></div>
+    </div>
+    <aside class="panel" id="panel" aria-live="polite"></aside>
+  </div>
+  <div class="vtable" id="vtable"></div>
+</div></section>
+
+<section class="sec" id="prevention"><div class="wrap">
+  <div class="sec-head"><div class="eyebrow" data-t="nav_prev"></div><div><h2 data-t="prev_h2"></h2><p class="intro" data-t="prev_intro"></p></div></div>
+  <div class="grid g2">
+    <div class="card" id="k-wealth"></div>
+    <div class="card" id="k-nets"></div>
+  </div>
+  <div class="grid" style="margin-top:18px"><div class="card" id="k-risk"></div></div>
+</div></section>
+
+<section class="sec" id="care"><div class="wrap">
+  <div class="sec-head"><div class="eyebrow" data-t="nav_care"></div><div><h2 data-t="care_h2"></h2><p class="intro" data-t="care_intro"></p></div></div>
+  <div class="tiles" id="care-tiles" style="margin-bottom:18px"></div>
+  <div class="grid g2">
+    <div class="card" id="k-fever"></div>
+    <div class="card" id="k-where"></div>
+  </div>
+</div></section>
+
+<section class="sec" id="facilities"><div class="wrap">
+  <div class="sec-head"><div class="eyebrow" data-t="nav_fac"></div><div><h2 data-t="fac_h2"></h2><p class="intro" data-t="fac_intro"></p></div></div>
+  <div class="tiles" id="fac-tiles" style="margin-bottom:18px"></div>
+  <div class="grid"><div class="card" id="k-ts"></div></div>
+  <div class="grid g2" style="margin-top:18px">
+    <div class="card" id="k-facbars"></div>
+    <div class="card" id="k-visits"></div>
+  </div>
+</div></section>
+
+<section class="sec" id="implications"><div class="wrap">
+  <div class="sec-head"><div class="eyebrow" data-t="nav_impl"></div><div><h2 data-t="impl_h2"></h2></div></div>
+  <div class="imp" id="imp"></div>
+</div></section>
+
+<section class="sec" id="quality"><div class="wrap">
+  <div class="sec-head"><div class="eyebrow" data-t="nav_dq"></div><div><h2 data-t="dq_h2"></h2><p class="intro" data-t="dq_intro"></p></div></div>
+  <div class="dq" id="dq"></div>
+</div></section>
+
+<section class="sec" id="evidence"><div class="wrap">
+  <div class="sec-head"><div class="eyebrow" data-t="nav_ev"></div><div><h2 data-t="ev_h2"></h2></div></div>
+  <div class="tl" id="tl"></div>
+</div></section>
+
+<section class="sec" id="methods"><div class="wrap">
+  <div class="sec-head"><div class="eyebrow" data-t="nav_methods"></div><div><h2 data-t="m_h2"></h2></div></div>
+  <div class="methods" id="methods-body"></div>
+</div></section>
+</main>
+
+<footer><div class="wrap"><div data-t="foot_l"></div><div data-t="foot_r"></div></div></footer>
+<div id="tip" role="tooltip"></div>

@@ -1,0 +1,256 @@
+{
+ "link": {
+  "Bungu A": {
+   "idx": 39,
+   "shape_village": "Bungu A",
+   "shape_ward": "Bungu",
+   "method": "name"
+  },
+  "Bungu B": {
+   "idx": 38,
+   "shape_village": "Bungu B",
+   "shape_ward": "Bungu",
+   "method": "name"
+  },
+  "Chumbi A": {
+   "idx": 54,
+   "shape_village": "Chumbi A",
+   "shape_ward": "Chumbi",
+   "method": "name"
+  },
+  "Chumbi B": {
+   "idx": 55,
+   "shape_village": "Chumbi B",
+   "shape_ward": "Chumbi",
+   "method": "name"
+  },
+  "Chumbi C": {
+   "idx": 53,
+   "shape_village": "Chumbi C",
+   "shape_ward": "Chumbi",
+   "method": "name"
+  },
+  "Ikwiriri Kaskazini": {
+   "idx": 0,
+   "shape_village": "Ikwiriri Kaskazini",
+   "shape_ward": "Ikwiriri",
+   "method": "name"
+  },
+  "Ikwiriri Kati": {
+   "idx": 2,
+   "shape_village": "Ikwiriri Kati",
+   "shape_ward": "Ikwiriri",
+   "method": "name"
+  },
+  "Ikwiriri Kusini": {
+   "idx": 1,
+   "shape_village": "Ikwiriri Kusini",
+   "shape_ward": "Ikwiriri",
+   "method": "name"
+  },
+  "Kibiti Kati": {
+   "idx": 30,
+   "shape_village": "Kibiti Kati",
+   "shape_ward": "Kibiti",
+   "method": "name"
+  },
+  "Kibiti Kusini": {
+   "idx": 28,
+   "shape_village": "Kibiti Kusini",
+   "shape_ward": "Kibiti",
+   "method": "name"
+  },
+  "Kimbuga": {
+   "idx": 99,
+   "shape_village": "Kimbuga",
+   "shape_ward": "Dimani",
+   "method": "name"
+  },
+  "King'ongo": {
+   "idx": 56,
+   "shape_village": "Mohoro",
+   "shape_ward": "Chumbi",
+   "method": "gps (24/34 households)"
+  },
+  "Kingwila": {
+   "idx": 36,
+   "shape_village": "Kingwira",
+   "shape_ward": "Kibiti",
+   "method": "name"
+  },
+  "Kinyanya": {
+   "idx": 104,
+   "shape_village": "Kinyanya",
+   "shape_ward": "Mtawanya",
+   "method": "name"
+  },
+  "Kiwanga": {
+   "idx": 58,
+   "shape_village": "Kiwanga",
+   "shape_ward": "Chumbi",
+   "method": "name"
+  },
+  "Lumiozi": {
+   "idx": 31,
+   "shape_village": "Lumiozi",
+   "shape_ward": "Kibiti",
+   "method": "name"
+  },
+  "Makaoni": {
+   "idx": 33,
+   "shape_village": "Makaoni",
+   "shape_ward": "Kibiti",
+   "method": "name"
+  },
+  "Mangombela": {
+   "idx": 39,
+   "shape_village": "Bungu A",
+   "shape_ward": "Bungu",
+   "method": "gps (5/6 households)"
+  },
+  "Mbebetini": {
+   "idx": 35,
+   "shape_village": "Sokoni",
+   "shape_ward": "Kibiti",
+   "method": "gps (65/69 households)"
+  },
+  "Mgomba Kaskazini": {
+   "idx": 3,
+   "shape_village": "Mgomba Kaskazini",
+   "shape_ward": "Mgomba",
+   "method": "name"
+  },
+  "Mgomba Kati": {
+   "idx": 4,
+   "shape_village": "Mgomba Kati",
+   "shape_ward": "Mgomba",
+   "method": "name"
+  },
+  "Mgomba Kusini": {
+   "idx": 5,
+   "shape_village": "Mgomba Kusini",
+   "shape_ward": "Mgomba",
+   "method": "name"
+  },
+  "Miwaga": {
+   "idx": 101,
+   "shape_village": "Miwaga",
+   "shape_ward": "Dimani",
+   "method": "name"
+  },
+  "Mng'aru": {
+   "idx": 100,
+   "shape_village": "Mng'aru",
+   "shape_ward": "Dimani",
+   "method": "name"
+  },
+  "Msafiri": {
+   "idx": 43,
+   "shape_village": "Msafiri",
+   "shape_ward": "Bungu",
+   "method": "name"
+  },
+  "Mtawanya B": {
+   "idx": 102,
+   "shape_village": "Mtawanya B",
+   "shape_ward": "Mtawanya",
+   "method": "name"
+  },
+  "Muhoro Magharibi": {
+   "idx": 56,
+   "shape_village": "Mohoro",
+   "shape_ward": "Chumbi",
+   "method": "name"
+  },
+  "Muhoro Mashariki": {
+   "idx": 56,
+   "shape_village": "Mohoro",
+   "shape_ward": "Chumbi",
+   "method": "name"
+  },
+  "Mwangia": {
+   "idx": 37,
+   "shape_village": "Mwangia",
+   "shape_ward": "Kibiti",
+   "method": "name"
+  },
+  "Ndundu Tawa": {
+   "idx": 57,
+   "shape_village": "Ndundutawa",
+   "shape_ward": "Chumbi",
+   "method": "name"
+  },
+  "Ngulakula": {
+   "idx": 98,
+   "shape_village": "Ngulakula",
+   "shape_ward": "Dimani",
+   "method": "name"
+  },
+  "Nyambili": {
+   "idx": 41,
+   "shape_village": "Nyambili",
+   "shape_ward": "Bungu",
+   "method": "name"
+  },
+  "Nyambunda": {
+   "idx": 42,
+   "shape_village": "Nyambunda",
+   "shape_ward": "Bungu",
+   "method": "name"
+  },
+  "Nyatanga": {
+   "idx": 29,
+   "shape_village": "Nyatanga",
+   "shape_ward": "Kibiti",
+   "method": "name"
+  },
+  "Pagae": {
+   "idx": 40,
+   "shape_village": "Pagae",
+   "shape_ward": "Bungu",
+   "method": "name"
+  },
+  "Shela": {
+   "idx": 56,
+   "shape_village": "Mohoro",
+   "shape_ward": "Chumbi",
+   "method": "gps (53/54 households)"
+  },
+  "Sokoni": {
+   "idx": 35,
+   "shape_village": "Sokoni",
+   "shape_ward": "Kibiti",
+   "method": "name"
+  },
+  "Umwe Kaskazini": {
+   "idx": 7,
+   "shape_village": "Umwe Kaskazini",
+   "shape_ward": "Umwe",
+   "method": "name"
+  },
+  "Umwe Kati": {
+   "idx": 6,
+   "shape_village": "Umwe Kati",
+   "shape_ward": "Umwe",
+   "method": "name"
+  },
+  "Umwe Kusini": {
+   "idx": 9,
+   "shape_village": "Umwe Kusini",
+   "shape_ward": "Umwe",
+   "method": "name"
+  },
+  "Zimbwini": {
+   "idx": 32,
+   "shape_village": "Zimwini",
+   "shape_ward": "Kibiti",
+   "method": "name"
+  }
+ },
+ "gps": {
+  "households": 2427,
+  "inside_pct": 100.0,
+  "ward_agree_pct": 97.8,
+  "village_agree_pct": 75.5
+ }
+}
