@@ -734,9 +734,102 @@ function renderStatic() {
   const tl = document.getElementById("tl"); tl.replaceChildren();
   ["e1", "e2", "e4", "e3"].forEach(k => { const d = el("div"); const y = el("div", "yr"); y.textContent = t(k + "_y"); const h = el("h3"); h.textContent = t(k + "_h"); const p = el("p"); p.textContent = t(k + "_p"); const c = el("div", "cite"); c.textContent = t(k + "_c"); d.append(y, h, p, c);
     if (T[k + "_here"]) { const hr = el("span", "here"); hr.textContent = t(k + "_here"); d.appendChild(hr); } tl.appendChild(d); });
-  const mb = document.getElementById("methods-body"); mb.replaceChildren();
-  ["m1", "m2", "m3", "m4"].forEach(k => { const d = el("div"); const h = el("h3"); h.textContent = t(k + "_h"); const ul = el("ul"); t(k + "_l").split("|").forEach(li => { const l = el("li"); l.textContent = li; ul.appendChild(l); }); d.append(h, ul); mb.appendChild(d); });
-  ["m5", "m6"].forEach(k => { const d = el("div"); const h = el("h3"); h.textContent = t(k + "_h"); const p = el("p", null, t(k + "_p")); d.append(h, p); mb.appendChild(d); });
+  renderMethods();
+}
+
+
+/* ================= METHODS (detailed record) ================= */
+const CL = DATA.CL || {};
+const OPEN = new Set((typeof METHODS !== "undefined" ? METHODS : []).filter(m => m.open).map(m => m.id));
+function methodNumbers() {
+  const b = CL.baseline || {}, e = CL.endline || {}, md = CL.models || {}, fc = CL.facility || {}, w = CL.wealth || {}, g = CL.geo || {};
+  const ab = md.adjusted_by_survey_arm || {}, tb = md.tested_by_survey_arm || {};
+  const zh = LANG === "zh", zw = fc.zero_weeks || {};
+  const zk = k => { const key = Object.keys(zw).find(x => x.toLowerCase().indexOf(k) === 0); return key != null ? zw[key] : "–"; };
+  const lm = R.link_methods || {};
+  return {
+    b_raw: thou(b.raw_rows), b_vars: b.raw_vars, e_raw: thou(e.raw_rows), e_vars: e.raw_vars, b_empty: b.empty_member_rows, b_rows: thou(b.rows_after),
+    b_hh: thou(b.households_parent_key), b_hhid99: thou(b.hhid_99_or_blank_rows), e_hh: thou(e.households), b_ward_literal: b.ward_literal_rows,
+    b_vil_missing: b.village_99_or_blank, b_date_bad: b.date_pre2015_rows, b_d0: (b.date_range_valid || [])[0], b_d1: (b.date_range_valid || [])[1],
+    e_d0: (e.date_range || [])[0], e_d1: (e.date_range || [])[1],
+    b_age_rep: thou(b.age.reported), b_age_apx: thou(b.age.from_approx), b_age_dob: thou(b.age.from_dob), b_age_miss: b.age.still_missing,
+    e_age_rep: thou(e.age.reported), e_age_apx: thou(e.age.from_approx), e_age_dob: thou(e.age.from_dob), e_age_miss: e.age.still_missing,
+    b_rdt_n: thou((b.rdt_results.positive || 0) + (b.rdt_results.negative || 0)), b_rdt_blank: thou(b.rdt_results[""] || 0),
+    e_rdt_n: thou((e.rdt_results["1.0"] || 0) + (e.rdt_results["2.0"] || 0)), e_rdt_miss: thou(e.rdt_results["nan"] || 0),
+    b_fever_dk: b.fever["98.0"] || 0, b_seek_dk: b.seek_given_fever["98.0"] || 0, e_seek_dk: e.seek_given_fever["98.0"] || 0,
+    b_net_dk: b.slept_net["98.0"] || 0, e_net_miss: e.slept_net["nan"] || 0, b_where_multi: b.where_multi_select,
+    b_travel_ans: thou((b.travel["1.0"] || 0) + (b.travel["2.0"] || 0)), b_screen3: thou(b.screen["3.0"] || 0),
+    tst_b: thou((tb["0_0"] || 0) + (tb["0_1"] || 0)), adj_b: thou((ab["0_0"] || 0) + (ab["0_1"] || 0)), tst_e: thou((tb["1_0"] || 0) + (tb["1_1"] || 0)), adj_e: thou((ab["1_0"] || 0) + (ab["1_1"] || 0)),
+    adj: thou(md.adjusted_sample), adj_hh: thou(md.adjusted_households), n_common: N.n_common,
+    w_hh: thou(w.households), w_pc1: (100 * w.pc1_share).toFixed(1), w_pc2: (100 * w.pc2_share).toFixed(1), w_cuts: (w.cutpoints || []).map(f2).join(", "),
+    lab_irr: zh ? "“3-9.10.20166”（年份误为20166）、高传播区“4 -17.01.2015”（2016误为2015）、“4 12.6.2016”（缺连字符）" : "“3-9.10.20166” (year typed 20166), “4 -17.01.2015” in the high-area block (2015 for 2016), “4 12.6.2016” (missing dash)",
+    multi: zh ? "2015年11月整月、12月14日至1月3日、1月4–17日、2月15–28日" : "the whole of November 2015, 14 Dec – 3 Jan, 4–17 Jan, 15–28 Feb",
+    low_s: thou(fc.low_sum[0]), low_p: thou(fc.low_sum[1]), low_ts: thou(fc.low_total_row[0]), low_tp: thou(fc.low_total_row[1]),
+    hi_s: thou(fc.high_sum[0]), hi_p: thou(fc.high_sum[1]), hi_ts: thou(fc.high_total_row[0]), hi_tp: thou(fc.high_total_row[1]),
+    z_amelab: zk("amelab"), z_ndu: zk("ndundutawa"), z_kiw: zk("kiwanga"), z_chu: zk("chumbi"),
+    dup: zh ? `检测${thou(fc.dup_check.mohoro_7_13dec[0])}人，阳性${thou(fc.dup_check.mohoro_7_13dec[1])}人` : `${thou(fc.dup_check.mohoro_7_13dec[0])} tested, ${thou(fc.dup_check.mohoro_7_13dec[1])} positive`,
+    fs_low_rows: fc.fsat_rows.low, fs_hi_rows: fc.fsat_rows.high, fs_low: `${thou(fc.fsat_total_rows.low[1])} / ${thou(fc.fsat_total_rows.low[2])}`, fs_hi: `${thou(fc.fsat_total_rows.high[1])} / ${thou(fc.fsat_total_rows.high[2])}`,
+    fs_gtpop: fc.fsat_screened_gt_pop_rows, fs_gthh: fc.fsat_hhs_screened_gt_hhs_rows,
+    n_vil: N.vill, n_gps: Object.keys(lm).length, n_name: String(+N.vill - Object.keys(lm).length),
+    gps_n: thou(R.link_gps.households), gps_in: f1(R.link_gps.inside_pct), gps_w: f1(R.link_gps.ward_agree_pct), gps_v: f1(R.link_gps.village_agree_pct),
+    v0: thou(g.v0 || 0), v1: thou(g.v1 || 0), rv_h1: N.rv_h1, rv_h3: N.rv_h3,
+  };
+}
+function renderMethods() {
+  const wrap = document.getElementById("methods-body"); if (!wrap || typeof METHODS === "undefined") return;
+  wrap.replaceChildren(); const MN = methodNumbers();
+  const fill = s => s.replace(/\{\{(\w+)\}\}/g, (m, k) => (MN[k] != null ? String(MN[k]) : m));
+  METHODS.forEach(sec => {
+    const d = document.createElement("details"); d.className = "acc"; d.id = sec.id; if (OPEN.has(sec.id)) d.open = true;
+    d.addEventListener("toggle", () => { if (d.open) OPEN.add(sec.id); else OPEN.delete(sec.id); });
+    const sm = document.createElement("summary"); sm.textContent = sec.t[LI()]; d.appendChild(sm);
+    const body = document.createElement("div"); body.className = "acc-b"; body.innerHTML = fill(sec.h[LI()]);
+    body.querySelectorAll("table.mt").forEach(tb => { const w = document.createElement("div"); w.className = "mt-wrap"; tb.parentNode.insertBefore(w, tb); w.appendChild(tb); });
+    if (sec.flow) body.appendChild(flowDiagram());
+    if (sec.wealth) body.appendChild(wealthTable());
+    d.appendChild(body); wrap.appendChild(d);
+  });
+}
+function flowDiagram() {
+  const b = CL.baseline, e = CL.endline, md = CL.models, ab = md.adjusted_by_survey_arm, tb = md.tested_by_survey_arm, hm = CL.harmonised.by_survey_arm;
+  const mk = (tag, cls, txt) => { const x = document.createElement(tag); if (cls) x.className = cls; if (txt != null) x.textContent = txt; return x; };
+  const box = (n, l, s, fin) => { const x = mk("div", "fbox" + (fin ? " final" : "")); x.appendChild(mk("div", "n", n)); x.appendChild(mk("div", "l", l)); if (s) x.appendChild(mk("div", "s", s)); return x; };
+  const step = (txt) => { const x = mk("div", "fstep"); x.appendChild(mk("i")); x.appendChild(mk("span", null, txt)); return x; };
+  const split = (k0, k1, src) => t("fl_split").replace("{x_c}", thou(src[k0])).replace("{x_i}", thou(src[k1]));
+  const col = (title, raw, empty, people, hh, tested, k0, k1) => {
+    const c = mk("div", "flow-col"); c.appendChild(mk("h4", null, title));
+    c.appendChild(box(thou(raw), t("fl_raw")));
+    c.appendChild(step(`${MINUS}${thou(empty)} ${t("fl_empty")}`));
+    c.appendChild(box(thou(people), t("fl_people").replace("{x_hh}", thou(hh))));
+    c.appendChild(step(`${MINUS}${thou(people - tested)} ${t("fl_untested")}`));
+    c.appendChild(box(thou(tested), t("fl_tested"), split(k0, k1, tb)));
+    const adj = ab[k0] + ab[k1];
+    c.appendChild(step(`${MINUS}${thou(tested - adj)} ${t("fl_missing")}`));
+    c.appendChild(box(thou(adj), t("fl_model"), split(k0, k1, ab), true));
+    return c;
+  };
+  const f = mk("div", "flow");
+  const bp = hm["0_0"].people + hm["0_1"].people, ep = hm["1_0"].people + hm["1_1"].people;
+  f.appendChild(col(t("fl_b"), b.raw_rows, b.empty_member_rows, bp, b.households_parent_key, tb["0_0"] + tb["0_1"], "0_0", "0_1"));
+  f.appendChild(col(t("fl_e"), e.raw_rows, e.raw_rows - ep, ep, e.households, tb["1_0"] + tb["1_1"], "1_0", "1_1"));
+  f.appendChild(mk("div", "flow-total", t("fl_total").replace("{x_n}", thou(md.adjusted_sample)).replace("{x_hh}", thou(md.adjusted_households))));
+  return f;
+}
+function wealthTable() {
+  const items = (CL.wealth.items || []).slice().sort((a, b) => b.loading - a.loading);
+  const mx = Math.max(...items.map(i => Math.abs(i.loading)));
+  const w = document.createElement("div"); w.className = "mt-wrap";
+  const tb = document.createElement("table"); tb.className = "mt wl";
+  const hr = document.createElement("tr"); [["wl_item", ""], ["wl_load", "num"], ["wl_p15", "num"], ["wl_p18", "num"]].forEach(([k, c]) => { const th = document.createElement("th"); th.textContent = t(k); if (c) th.className = c; hr.appendChild(th); });
+  const th = document.createElement("thead"); th.appendChild(hr); tb.appendChild(th);
+  const body = document.createElement("tbody");
+  items.forEach(it => { const tr = document.createElement("tr");
+    const a = document.createElement("td"); a.textContent = T["wl_" + it.item] ? t("wl_" + it.item) : it.item; tr.appendChild(a);
+    const l = document.createElement("td"); l.className = "num"; const bar = document.createElement("span"); bar.className = "wbar"; bar.style.width = Math.round(60 * Math.abs(it.loading) / mx) + "px"; bar.style.background = it.loading >= 0 ? K.int : K.ctl; bar.style.marginRight = "8px";
+    l.appendChild(bar); l.appendChild(document.createTextNode(f2(it.loading))); tr.appendChild(l);
+    [it.prev_2015, it.prev_2018].forEach(v => { const td = document.createElement("td"); td.className = "num"; td.textContent = pct(v); tr.appendChild(td); });
+    body.appendChild(tr); });
+  tb.appendChild(body); w.appendChild(tb); return w;
 }
 
 /* ================= LANGUAGE / THEME ================= */

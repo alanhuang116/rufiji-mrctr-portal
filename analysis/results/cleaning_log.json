@@ -1,0 +1,591 @@
+{
+ "baseline": {
+  "raw_rows": 9617,
+  "raw_vars": 183,
+  "empty_member_rows": 65,
+  "rows_after": 9552,
+  "households_parent_key": 2027,
+  "hhid_99_or_blank_rows": 893,
+  "ward_raw": {
+   "Kibiti": 2568,
+   "Bungu": 2303,
+   "chumbi": 2001,
+   "Ikwiriri": 928,
+   "Umwe": 900,
+   "Mgomba": 767,
+   "ward": 85
+  },
+  "village_99_or_blank": 191,
+  "ward_literal_rows": 85,
+  "date_min": "2000-01-02",
+  "date_max": "2015-12-01",
+  "date_pre2015_rows": 33,
+  "date_range_valid": [
+   "2015-09-10",
+   "2015-12-01"
+  ],
+  "age": {
+   "reported": 5321,
+   "reported_gt110_set_missing": 1,
+   "max_reported": 600.0,
+   "from_approx": 1078,
+   "from_dob": 3074,
+   "still_missing": 80,
+   "dob_negative_or_gt110": 79
+  },
+  "sex": {
+   "2.0": 5207,
+   "1.0": 4345
+  },
+  "rdt_results": {
+   "negative": 5621,
+   "positive": 2070,
+   "": 1861
+  },
+  "rdt_taken": {
+   "1.0": 7691,
+   "nan": 1760,
+   "2.0": 101
+  },
+  "rdt_taken_no_result": 0,
+  "micro_pf": {
+   "2.0": 6093,
+   "nan": 2535,
+   "1.0": 915,
+   "9.0": 8,
+   "0.0": 1
+  },
+  "fever": {
+   "2.0": 8310,
+   "1.0": 1066,
+   "98.0": 176
+  },
+  "seek_given_fever": {
+   "1.0": 724,
+   "2.0": 337,
+   "98.0": 5
+  },
+  "slept_net": {
+   "1.0": 5285,
+   "2.0": 3909,
+   "98.0": 358
+  },
+  "has_net": {
+   "1.0": 5559,
+   "2.0": 3993
+  },
+  "where_multi_select": 6,
+  "where_answered": 724,
+  "travel": {
+   "nan": 8719,
+   "1.0": 662,
+   "2.0": 171
+  },
+  "floor": {
+   "1.0": 6390,
+   "4.0": 2899,
+   "3.0": 122,
+   "99.0": 116,
+   "2.0": 25
+  },
+  "roof": {
+   "2.0": 6623,
+   "3.0": 2888,
+   "1.0": 35,
+   "99.0": 6
+  },
+  "walls": {
+   "3.0": 6710,
+   "2.0": 1448,
+   "1.0": 1044,
+   "4.0": 311,
+   "99.0": 39
+  },
+  "eaves": {
+   "1.0": 8303,
+   "2.0": 1249
+  },
+  "screen": {
+   "1.0": 3113,
+   "2.0": 3111,
+   "nan": 2362,
+   "3.0": 966
+  },
+  "irs": {
+   "2.0": 9502,
+   "1.0": 50
+  }
+ },
+ "endline": {
+  "raw_rows": 10134,
+  "raw_vars": 282,
+  "households": 2427,
+  "site": {
+   "2": 5574,
+   "1": 4560
+  },
+  "tr_intensity": {
+   "nan": 5574,
+   "2.0": 3246,
+   "1.0": 1314
+  },
+  "w_ctrl": {
+   "nan": 4560,
+   "1.0": 2923,
+   "2.0": 2651
+  },
+  "high_intens_wards": {
+   "nan": 8820,
+   "1.0": 1231,
+   "2.0": 83
+  },
+  "date_range": [
+   "2018-03-24",
+   "2018-04-29"
+  ],
+  "age": {
+   "reported": 2295,
+   "reported_gt110_set_missing": 1,
+   "from_approx": 1045,
+   "approx_gt110_set_missing": 1,
+   "from_dob": 6792,
+   "still_missing": 3
+  },
+  "sex": {
+   "2": 5774,
+   "1": 4360
+  },
+  "rdt_results": {
+   "2.0": 7205,
+   "nan": 2145,
+   "1.0": 784
+  },
+  "rdt_taken": {
+   "1.0": 7939,
+   "nan": 2145,
+   "2.0": 50
+  },
+  "micro_pf": {
+   "2.0": 7734,
+   "nan": 2145,
+   "1.0": 255
+  },
+  "fever": {
+   "2": 9228,
+   "1": 906
+  },
+  "seek_given_fever": {
+   "1.0": 544,
+   "2.0": 361,
+   "98.0": 1
+  },
+  "slept_net": {
+   "1.0": 8241,
+   "2.0": 1588,
+   "nan": 305
+  },
+  "has_net": {
+   "1": 8609,
+   "2": 1525
+  },
+  "travel": {
+   "2": 9634,
+   "1": 500
+  },
+  "mda_hh": {
+   "nan": 8170,
+   "1.0": 1649,
+   "2.0": 315
+  },
+  "mda_ind": {
+   "nan": 8170,
+   "1.0": 1118,
+   "2.0": 846
+  },
+  "gps_nonmissing": 10134,
+  "gps_lat_range": [
+   -8.2512451,
+   -7.5656188
+  ],
+  "gps_lon_range": [
+   38.7958478,
+   39.2506157
+  ],
+  "floor": {
+   "1": 4980,
+   "4": 4866,
+   "3": 209,
+   "2": 44,
+   "99": 33,
+   "98": 2
+  },
+  "roof": {
+   "2": 8461,
+   "3": 1646,
+   "99": 14,
+   "1": 8,
+   "98": 5
+  },
+  "walls": {
+   "3": 5638,
+   "2": 2410,
+   "1": 2004,
+   "4": 82
+  },
+  "kibiti_a_hamlet": {
+   "nan": 9557,
+   "3.0": 317,
+   "4.0": 260
+  },
+  "kibiti_b_hamlet": {
+   "nan": 8519,
+   "1.0": 747,
+   "6.0": 677,
+   "2.0": 191
+  }
+ },
+ "harmonised": {
+  "rows": 19686,
+  "by_survey_arm": {
+   "0_0": {
+    "people": 4871,
+    "households": 1033,
+    "tested": 3935,
+    "pos": 1104
+   },
+   "0_1": {
+    "people": 4681,
+    "households": 994,
+    "tested": 3756,
+    "pos": 966
+   },
+   "1_0": {
+    "people": 5574,
+    "households": 1387,
+    "tested": 4523,
+    "pos": 615
+   },
+   "1_1": {
+    "people": 4560,
+    "households": 1040,
+    "tested": 3466,
+    "pos": 169
+   }
+  },
+  "village_missing": {
+   "0": 191,
+   "1": 0
+  },
+  "villages_per_survey": {
+   "0": 34,
+   "1": 34
+  },
+  "age_missing": {
+   "0": 80,
+   "1": 3
+  },
+  "agegrp": {
+   "0": {
+    "15+": 4929,
+    "5-14": 2859,
+    "<5": 1684
+   },
+   "1": {
+    "15+": 5486,
+    "5-14": 2963,
+    "<5": 1682
+   }
+  },
+  "missing_among_tested": {
+   "age": {
+    "0": 64,
+    "1": 2
+   },
+   "male": {
+    "0": 0,
+    "1": 0
+   },
+   "slept_net": {
+    "0": 29,
+    "1": 277
+   },
+   "wq": {
+    "0": 0,
+    "1": 0
+   },
+   "fever": {
+    "0": 22,
+    "1": 0
+   },
+   "travel": {
+    "0": 7212,
+    "1": 0
+   }
+  },
+  "tested_share": {
+   "0_0": 80.8,
+   "0_1": 80.2,
+   "1_0": 81.1,
+   "1_1": 76.0
+  }
+ },
+ "wealth": {
+  "households": 4454,
+  "hh_with_any_missing_item": 0,
+  "item_missing": {
+   "a_bed": 0,
+   "a_mattress": 0,
+   "a_wardrobe": 0,
+   "a_sofa": 0,
+   "a_watch": 0,
+   "a_iron": 0,
+   "a_radio": 0,
+   "a_bicycle": 0,
+   "a_motorcycle": 0,
+   "a_car": 0,
+   "a_fowls": 0,
+   "a_cows": 0,
+   "a_goats": 0,
+   "a_elec": 0,
+   "a_toilet": 0,
+   "a_fuel": 0,
+   "a_tap": 0,
+   "a_edu": 0,
+   "floor_imp": 0,
+   "roof_imp": 0,
+   "wall_imp": 0
+  },
+  "pc1_share": 0.244,
+  "pc2_share": 0.085,
+  "items": [
+   {
+    "item": "a_bed",
+    "loading": 0.087,
+    "prev_2015": 94.4,
+    "prev_2018": 95.6
+   },
+   {
+    "item": "a_mattress",
+    "loading": 0.202,
+    "prev_2015": 72.6,
+    "prev_2018": 88.0
+   },
+   {
+    "item": "a_wardrobe",
+    "loading": 0.315,
+    "prev_2015": 14.1,
+    "prev_2018": 19.1
+   },
+   {
+    "item": "a_sofa",
+    "loading": 0.332,
+    "prev_2015": 16.2,
+    "prev_2018": 20.8
+   },
+   {
+    "item": "a_watch",
+    "loading": 0.218,
+    "prev_2015": 20.8,
+    "prev_2018": 10.3
+   },
+   {
+    "item": "a_iron",
+    "loading": 0.284,
+    "prev_2015": 16.8,
+    "prev_2018": 16.2
+   },
+   {
+    "item": "a_radio",
+    "loading": 0.183,
+    "prev_2015": 54.1,
+    "prev_2018": 50.8
+   },
+   {
+    "item": "a_bicycle",
+    "loading": 0.032,
+    "prev_2015": 58.6,
+    "prev_2018": 48.8
+   },
+   {
+    "item": "a_motorcycle",
+    "loading": 0.162,
+    "prev_2015": 10.9,
+    "prev_2018": 13.5
+   },
+   {
+    "item": "a_car",
+    "loading": 0.111,
+    "prev_2015": 1.9,
+    "prev_2018": 1.3
+   },
+   {
+    "item": "a_fowls",
+    "loading": -0.057,
+    "prev_2015": 43.9,
+    "prev_2018": 35.0
+   },
+   {
+    "item": "a_cows",
+    "loading": -0.008,
+    "prev_2015": 1.2,
+    "prev_2018": 0.6
+   },
+   {
+    "item": "a_goats",
+    "loading": 0.011,
+    "prev_2015": 5.1,
+    "prev_2018": 2.8
+   },
+   {
+    "item": "a_elec",
+    "loading": 0.325,
+    "prev_2015": 18.1,
+    "prev_2018": 29.7
+   },
+   {
+    "item": "a_toilet",
+    "loading": 0.285,
+    "prev_2015": 8.8,
+    "prev_2018": 17.4
+   },
+   {
+    "item": "a_fuel",
+    "loading": 0.289,
+    "prev_2015": 24.0,
+    "prev_2018": 48.2
+   },
+   {
+    "item": "a_tap",
+    "loading": 0.129,
+    "prev_2015": 33.4,
+    "prev_2018": 51.1
+   },
+   {
+    "item": "a_edu",
+    "loading": 0.218,
+    "prev_2015": 8.2,
+    "prev_2018": 13.6
+   },
+   {
+    "item": "floor_imp",
+    "loading": 0.318,
+    "prev_2015": 32.2,
+    "prev_2018": 51.4
+   },
+   {
+    "item": "roof_imp",
+    "loading": 0.205,
+    "prev_2015": 68.4,
+    "prev_2018": 83.4
+   },
+   {
+    "item": "wall_imp",
+    "loading": 0.244,
+    "prev_2015": 11.2,
+    "prev_2018": 20.3
+   }
+  ],
+  "cutpoints": [
+   -1.814,
+   -1.133,
+   -0.132,
+   1.825
+  ]
+ },
+ "models": {
+  "tested": 15680,
+  "tested_households": 4411,
+  "adjusted_sample": 15308,
+  "adjusted_households": 4350,
+  "dropped_for_covariates": 372,
+  "adjusted_by_survey_arm": {
+   "0_0": 3891,
+   "0_1": 3707,
+   "1_0": 4297,
+   "1_1": 3413
+  },
+  "tested_by_survey_arm": {
+   "0_0": 3935,
+   "0_1": 3756,
+   "1_0": 4523,
+   "1_1": 3466
+  },
+  "dropped_reason": {
+   "slept_net_missing": 306,
+   "age_missing": 66,
+   "male_missing": 0
+  }
+ },
+ "facility": {
+  "low_rows": 42,
+  "high_rows": 42,
+  "low_sum": [
+   37636,
+   10406
+  ],
+  "low_total_row": [
+   37636,
+   10403
+  ],
+  "high_sum": [
+   22439,
+   10386
+  ],
+  "high_total_row": [
+   22435,
+   10391
+  ],
+  "labels_irregular": [
+   "3-9.10.20166 (year typed 20166)",
+   "4 -17.01.2015 in the high-area block (year typed 2015 for 2016)",
+   "4 12.6.2016 (space instead of dash)"
+  ],
+  "multiweek_periods": [
+   "1-30.11.2015",
+   "14.12.15-3.1.16",
+   "4 -17.01.2016",
+   "15-28.2.2016"
+  ],
+  "zero_weeks": {
+   "Mohoro Health Center": 0,
+   "Arafa Dispensary": 0,
+   "Ndundutawa Disp": 9,
+   "Kiwanga Dispensary": 5,
+   "Chumbi Dispensary": 1,
+   "Ikwiriri Health Center": 0,
+   "Faraja Dispensary": 0,
+   "Mico Dispensary": 0,
+   "Mission Dispensary": 0,
+   "AMELAB": 26
+  },
+  "dup_check": {
+   "mohoro_7_13dec": [
+    1838,
+    421
+   ],
+   "ikwiriri_nov": [
+    1838,
+    421
+   ]
+  },
+  "fsat_total_rows": {
+   "low": [
+    "17 Rounds",
+    11194,
+    2248
+   ],
+   "high": [
+    "20 Rounds",
+    13290,
+    4857
+   ]
+  },
+  "fsat_rows": {
+   "low": 117,
+   "high": 64
+  },
+  "fsat_screened_gt_pop_rows": 2,
+  "fsat_hhs_screened_gt_hhs_rows": 10
+ },
+ "geo": {}
+}

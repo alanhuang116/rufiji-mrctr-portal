@@ -12,6 +12,6 @@ meta = ('<meta charset="utf-8">\n<meta name="viewport" content="width=device-wid
         '<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>\n')
 html = ("<!doctype html>\n<html lang=\"en\">\n<head>\n" + meta + head + "\n</head>\n<body>\n" + body +
         '\n<script id="portal-data" type="application/json">' + data + "</script>\n"
-        '<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>\n<script>\n' + rd("i18n.js") + "\n</script>\n<script>\n" + rd("app.js") + "\n</script>\n</body>\n</html>\n")
+        '<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>\n<script>\n' + rd("i18n.js") + "\n" + rd("methods.js") + "\n</script>\n<script>\n" + rd("app.js") + "\n</script>\n</body>\n</html>\n")
 open(os.path.join(HERE, "..", "index.html"), "w", encoding="utf-8").write(html)
 print(len(html) // 1024, "KB written to index.html")

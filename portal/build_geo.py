@@ -89,7 +89,7 @@ for m, rings in zip(nmeta, NS):
     rings = [r for r in rings if abs(ring_area(r)) > (0.02*Q)**2]
     if not rings: continue
     nat.append({"type": "Feature", "properties": m, "geometry": {"type": "Polygon", "coordinates": [[[round(x/Q, 3), round(y/Q, 3)] for x, y in r] for r in rings]}})
-geo = {"villages": {"type": "FeatureCollection", "features": feats}, "nat": {"type": "FeatureCollection", "features": nat}}
+geo = {"villages": {"type": "FeatureCollection", "features": feats}, "nat": {"type": "FeatureCollection", "features": nat}, "stats": {"v0": before, "v1": after, "n_polygons": len(feats)}}
 json.dump(geo, open(os.path.join(HERE, "geo.json"), "w"), separators=(",", ":"))
 print("village vertices", before, "->", after, "features", len(feats), "nat", len(nat))
 print("sizes KB", len(json.dumps(geo["villages"], separators=(",", ":")))//1024, len(json.dumps(geo["nat"], separators=(",", ":")))//1024)

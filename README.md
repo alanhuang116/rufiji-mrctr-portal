@@ -19,6 +19,8 @@ An interactive, bilingual (English / 中文) re-analysis of the China–UK–Tan
 
 The portal also covers the village map, wealth and bed-net equity, fever and care-seeking, 2016 facility positivity, and a data-quality review. · 门户还包括村庄地图、财富与蚊帐公平性、发热与就医、2016年机构阳性率及数据质量核查。
 
+**Full methods and data-cleaning record / 完整方法与数据清洗记录：[METHODS.md](METHODS.md)** (also in the portal's Methods section · 门户“方法”部分亦有收录)
+
 ## Repository layout · 目录结构
 
 ```
@@ -28,9 +30,10 @@ analysis/             Python scripts that produce the aggregate results from the
   02_analysis.py      prevalence, difference-in-differences, subgroups, equity, nets, care, data-quality checks
   03_facility.py      2016 facility registers and FSAT community-screening rounds
   04_village_link.py  link survey villages to boundary polygons (name match, GPS fallback)
+  05_cleaning_log.py  recompute every exclusion, recode and derived-variable count (cleaning audit)
   stats.py, shpio.py  cluster-robust OLS/logit; minimal shapefile reader
   results/            aggregate outputs used by the portal (no individual records)
-portal/               page source: templates, i18n.js (EN/中文 strings), app.js (charts and map), data.json
+portal/               page source: templates, i18n.js (EN/中文 strings), methods.js (methods record), app.js (charts and map), data.json
   build_geo.py        simplify village and district boundaries into geo.json
   assemble.py         combine results + geometry into data.json
   build.py            write ../index.html
@@ -48,12 +51,15 @@ python analysis/01_harmonize.py      # writes ~/tmp/D.pkl (individual-level; not
 python analysis/02_analysis.py
 python analysis/03_facility.py
 python analysis/04_village_link.py
+python analysis/05_cleaning_log.py
 python portal/build_geo.py "data sharing/shapefile"
 python portal/assemble.py
 python portal/build.py               # rebuilds index.html
 ```
 
 ## Methods in brief · 方法简述
+
+See [METHODS.md](METHODS.md) for the step-by-step record. · 详细步骤见 [METHODS.md](METHODS.md)。
 
 - Outcome: RDT result for each person tested. · 结局：每位受检者的RDT结果。
 - Difference-in-differences (round × arm) in logistic and linear probability models, adjusted for age group, sex, net use and wealth quintile; 95% CIs clustered by household. · 在logistic与线性概率模型中估计双重差分（轮次×分组），调整年龄组、性别、蚊帐使用与财富五分位，95%置信区间按家庭聚类。
@@ -63,6 +69,11 @@ python portal/build.py               # rebuilds index.html
 ## Privacy · 隐私
 
 The portal and the files in `analysis/results/` contain aggregate figures only: no names, household IDs or household coordinates. · 门户及 `analysis/results/` 中的文件仅含汇总数据，不含姓名、家庭编号或家庭坐标。
+
+## Version history · 版本记录
+
+- **v2 · 2026-10-26** — Detailed methods and data-cleaning record (sample flow, 13 cleaning steps with counts, variable dictionary, wealth-index loadings, model equations, facility and map processing); `05_cleaning_log.py`; `METHODS.md`. · 新增详细方法与数据清洗记录及清洗核查脚本。
+- **v1 · 2026-10-26** — First release. · 首次发布。
 
 ## Related publications · 相关文献
 

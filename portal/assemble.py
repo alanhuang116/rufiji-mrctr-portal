@@ -31,7 +31,8 @@ for blk in ("hf_low", "hf_high"):
     rows = H[blk]; fac = list(rows[0]["fac"].keys())
     H[blk+"_complete"] = {f: round(100*sum(1 for r in rows if r["fac"][f][0] > 0)/len(rows), 0) for f in fac}
 R["link_gps"] = L["gps"]; R["link_methods"] = {v: d["method"] for v, d in L["link"].items() if d["method"] != "name"}
-out = {"R": R, "H": H, "M": M, "geo": G["villages"], "nat": G["nat"]}
+CL = json.load(open(U+"cleaning_log.json")); CL["geo"] = G.get("stats", {})
+out = {"R": R, "H": H, "M": M, "CL": CL, "geo": G["villages"], "nat": G["nat"]}
 s = json.dumps(out, separators=(",", ":"), ensure_ascii=False)
 open(os.path.join(HERE, "data.json"), "w", encoding="utf-8").write(s)
 print(len(s)//1024, "KB written to data.json")
